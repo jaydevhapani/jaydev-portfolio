@@ -121,6 +121,11 @@ export const skillCategories: Record<string, Skill[]> = {
   Languages: [
     { name: 'JavaScript (ES6+)', level: 96 },
     { name: 'TypeScript', level: 90 },
+    { name: 'Java', level: 78 },
+    { name: 'Kotlin', level: 72 },
+    { name: 'Swift', level: 68 },
+    { name: 'C', level: 65 },
+    { name: 'C++', level: 62 },
   ],
   'State & Data': [
     { name: 'Redux', level: 92 },
