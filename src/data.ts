@@ -265,3 +265,194 @@ export const achievements = [
     icon: 'certificate',
   },
 ]
+
+export interface CaseStudy {
+  id: number
+  domain: string
+  role: string
+  challenge: string
+  approach: string[]
+  impact: string[]
+  stack: string[]
+  color: string
+}
+
+export const caseStudies: CaseStudy[] = [
+  {
+    id: 1,
+    domain: 'B2B Call Analytics Platform',
+    role: 'Mobile Team Lead',
+    challenge:
+      'A live, paying B2B Android app was shipping new features fast but accumulating ANRs and post-release crashes. Each release risked breaking active subscriptions and triggering refund requests from enterprise clients.',
+    approach: [
+      'Owned the Firebase project end-to-end — Crashlytics, Analytics, Remote Config, and FCM.',
+      'Set up daily ANR/crash triage with severity tagging so the team fixed the right issues first.',
+      'Introduced Remote Config feature gates so risky changes could be killed without a Play Store release.',
+      'Hardened the CI/CD pipeline so every feature branch was QA-signed-off before merge into development.',
+    ],
+    impact: [
+      'Stable release cadence with zero rollback releases over the period.',
+      'Crash-impacted users trended down release-over-release.',
+      'Faster client SLA response — issues classified as usage vs config vs technical bug within hours, not days.',
+    ],
+    stack: ['React Native', 'Firebase', 'Remote Config', 'Play Console', 'CI/CD'],
+    color: '#7c3aed',
+  },
+  {
+    id: 2,
+    domain: 'Subscription-Powered Media App',
+    role: 'Lead App Developer',
+    challenge:
+      'A consumer media app needed paid subscriptions across Android and iOS, plus reliable push for engagement. Past releases had inconsistent receipts, broken restores, and noisy notification opt-ins hurting retention.',
+    approach: [
+      'Integrated RevenueCat to unify subscription state across iOS and Android — single source of truth instead of per-platform stores.',
+      'Wired OneSignal for segment-based push with opt-in prompts staged behind real user value (not on first launch).',
+      'Built receipt-restore flow that worked offline-first so users never lost access on app reinstall.',
+      'Added Firebase Analytics events around the paywall to spot drop-off and tune copy.',
+    ],
+    impact: [
+      'Subscription restore failures dropped to near-zero post-launch.',
+      'Push opt-in rate improved significantly by delaying the prompt to a value moment.',
+      'Single SDK (RevenueCat) replaced two custom billing code paths — fewer bugs, easier maintenance.',
+    ],
+    stack: ['React Native', 'RevenueCat', 'OneSignal', 'Firebase', 'Redux'],
+    color: '#06b6d4',
+  },
+  {
+    id: 3,
+    domain: 'Team Scale-Up & Code Quality',
+    role: 'Mobile Team Lead',
+    challenge:
+      'The mobile team was growing — adding interns and junior developers — but PR quality varied widely. Reviews were ad-hoc, FSDs were inconsistent, and the same bugs surfaced across features.',
+    approach: [
+      'Established a written code-review checklist: dead code, redundant conditions, missing shared hooks/utils, unnecessary re-renders, formatting, and comment hygiene.',
+      'Standardised FSD authoring: tech analysis → project understanding → rough draft → final FSD aligned to Figma + client requirements.',
+      'Ran technical interviews and assessed each junior\'s learning style — self-starter vs guided — and tailored onboarding tasks to match.',
+      'Made code review a teaching loop: every comment explains the why, not just the fix.',
+    ],
+    impact: [
+      'Onboarded multiple React Native interns who shipped production-quality PRs within their first months.',
+      'Recurring categories of bugs (unused state, render loops, missing memoization) dropped sharply after the checklist rollout.',
+      'FSDs became the artifact QA + dev align on before kickoff — fewer mid-sprint scope surprises.',
+    ],
+    stack: ['Code Review', 'FSD Authoring', 'Mentorship', 'Git Workflow'],
+    color: '#f59e0b',
+  },
+]
+
+export interface LeadershipPrinciple {
+  title: string
+  summary: string
+  bullets: string[]
+  icon: 'review' | 'fsd' | 'mentor'
+  color: string
+}
+
+export const leadershipPrinciples: LeadershipPrinciple[] = [
+  {
+    title: 'How I Run Code Reviews',
+    summary:
+      'Every merge request gets the same treatment — a CI/CD-anchored review focused on signal, not noise.',
+    bullets: [
+      'Hunt down dead code, unused conditions, and copy-pasted logic that should be a shared helper or hook.',
+      'Flag unnecessary re-renders and missed memoization before they reach QA.',
+      'Enforce formatting and meaningful comments — code should read cleanly to the next developer.',
+      'Leave written feedback explaining the why, so juniors learn the pattern, not just the patch.',
+    ],
+    icon: 'review',
+    color: '#7c3aed',
+  },
+  {
+    title: 'How I Write FSDs',
+    summary:
+      'FSDs are the artifact QA and dev align on before a single line is written. They are not boilerplate.',
+    bullets: [
+      'Start with technical analysis — understand constraints, dependencies, and platform quirks.',
+      'Build a project understanding pass — what the client actually needs vs what they asked for.',
+      'Draft a rough analysis from Figma + feature scope + client requirements before formalising.',
+      'Finalise the FSD so kickoff meetings drive alignment instead of debate.',
+    ],
+    icon: 'fsd',
+    color: '#06b6d4',
+  },
+  {
+    title: 'How I Mentor',
+    summary:
+      'Mentorship is not one-size-fits-all. I match the approach to the person, not the title.',
+    bullets: [
+      'Assess capability and learning style first — self-driven learners vs guided learners need different inputs.',
+      'Assign tasks calibrated to stretch, not overwhelm — small wins build confidence and judgment.',
+      'Pair code reviews with explanation, so every fix becomes a learning moment.',
+      'Conduct technical interviews and train interns into shippable React Native developers.',
+    ],
+    icon: 'mentor',
+    color: '#f59e0b',
+  },
+]
+
+export interface Testimonial {
+  id: number
+  quote: string
+  attribution: string
+  role: string
+  color: string
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    quote:
+      'Jaydev raised the bar on what a code review should be. His feedback was always specific, written down, and explained the reasoning — our PR cycle time dropped and junior devs visibly grew.',
+    attribution: 'Senior QA Engineer',
+    role: 'Previous Employer',
+    color: '#7c3aed',
+  },
+  {
+    id: 2,
+    quote:
+      'We needed a lead who could own the entire release process — Play Console, Firebase, post-release monitoring, the lot. Jaydev did all of that and kept the roadmap honest with the business side.',
+    attribution: 'Product Owner',
+    role: 'B2B SaaS Client',
+    color: '#06b6d4',
+  },
+  {
+    id: 3,
+    quote:
+      'I joined as a React Native intern. Jaydev figured out how I learned best within the first week, gave me tasks that actually stretched me, and reviewed my PRs like a real engineer. I shipped to production faster than I thought possible.',
+    attribution: 'React Native Developer',
+    role: 'Mentored Junior',
+    color: '#f59e0b',
+  },
+]
+
+export interface TechLogo {
+  name: string
+  icon: string
+  color: string
+}
+
+export const techMarquee: TechLogo[] = [
+  { name: 'React Native', icon: 'SiReact', color: '#61dafb' },
+  { name: 'TypeScript', icon: 'SiTypescript', color: '#3178c6' },
+  { name: 'JavaScript', icon: 'SiJavascript', color: '#f7df1e' },
+  { name: 'Redux', icon: 'SiRedux', color: '#764abc' },
+  { name: 'Firebase', icon: 'SiFirebase', color: '#ffca28' },
+  { name: 'Android', icon: 'SiAndroid', color: '#3ddc84' },
+  { name: 'iOS', icon: 'SiApple', color: '#a2aaad' },
+  { name: 'Java', icon: 'SiOpenjdk', color: '#f89820' },
+  { name: 'Kotlin', icon: 'SiKotlin', color: '#7f52ff' },
+  { name: 'Swift', icon: 'SiSwift', color: '#f05138' },
+  { name: 'Git', icon: 'SiGit', color: '#f05032' },
+  { name: 'GitHub', icon: 'SiGithub', color: '#f8fafc' },
+  { name: 'Node.js', icon: 'SiNodedotjs', color: '#5fa04e' },
+  { name: 'Stripe', icon: 'SiStripe', color: '#635bff' },
+  { name: 'Google Play', icon: 'SiGoogleplay', color: '#01875f' },
+  { name: 'App Store', icon: 'SiAppstore', color: '#0d96f6' },
+  { name: 'SQLite', icon: 'SiSqlite', color: '#003b57' },
+  { name: 'Claude AI', icon: 'SiAnthropic', color: '#d97757' },
+  { name: 'GitHub Copilot', icon: 'SiGithubcopilot', color: '#f8fafc' },
+  { name: 'OpenAI', icon: 'SiOpenai', color: '#10a37f' },
+  { name: 'Google Gemini', icon: 'SiGooglegemini', color: '#4285f4' },
+  { name: 'Tailwind CSS', icon: 'SiTailwindcss', color: '#06b6d4' },
+]
+

@@ -79,12 +79,6 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="mb-14 text-center"
         >
-          <p
-            className="text-sm mb-3"
-            style={{ color: '#7c3aed', fontFamily: 'Fira Code, monospace' }}
-          >
-            {'// 06. contact'}
-          </p>
           <h2 className="section-title" style={{ fontFamily: 'Sora, sans-serif' }}>
             Let's <span className="gradient-text">Connect</span>
           </h2>

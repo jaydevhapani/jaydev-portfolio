@@ -7,7 +7,10 @@ const LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Leadership', href: '#how-i-lead' },
+  { label: 'Case Studies', href: '#case-studies' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ]
 

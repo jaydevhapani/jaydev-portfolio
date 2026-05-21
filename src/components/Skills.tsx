@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { skillCategories } from '../data'
+import TechMarquee from './TechMarquee'
 
 const CATEGORY_ICONS: Record<string, string> = {
   Mobile: '📱',
@@ -51,6 +52,16 @@ export default function Skills() {
             My <span className="gradient-text">Expertise</span>
           </h2>
           <p className="section-subtitle">Technologies and tools I use to build great products</p>
+        </motion.div>
+
+        {/* Tech marquee */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-12"
+        >
+          <TechMarquee />
         </motion.div>
 
         {/* Category tabs */}
