@@ -165,248 +165,76 @@ export const skillCategories: Record<string, Skill[]> = {
   ],
 }
 
-export interface Project {
-  id: number
+export interface ProjectCategory {
   name: string
-  country: string
-  domain: string
-  role: string
-  roleType: 'lead' | 'developer'
-  tech: string[]
-  description: string
+  count: number
   color: string
+  description: string
 }
 
-export const projects: Project[] = [
+export const projectCategories: ProjectCategory[] = [
   {
-    id: 1,
-    name: 'Callyzer Pro',
-    country: 'India',
-    domain: 'Call Utility / B2B',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native', 'TypeScript', 'Firebase', 'Play Billing'],
-    description:
-      'B2B call management & analytics platform for businesses to monitor, manage and analyse phone call activity of their sales teams. Features call logs, duration tracking, analytics, and subscription management.',
+    name: 'E-Commerce & Retail',
+    count: 3,
     color: '#7c3aed',
+    description: 'Shopping platforms with cart, payments, and in-app purchases.',
   },
   {
-    id: 2,
-    name: 'Eyes on Score',
-    country: '—',
-    domain: 'Sports',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native'],
-    description:
-      'Sports archive application for browsing and tracking historical sports data, scores, and match records. Built for sports enthusiasts to access comprehensive archived sports content.',
-    color: '#06b6d4',
-  },
-  {
-    id: 3,
-    name: 'You Spin',
-    country: 'Africa',
-    domain: 'Music',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native', 'Firebase', 'OneSignal', 'RevenueCat'],
-    description:
-      'Music application for listening, downloading, and subscribing to music content. Integrated RevenueCat for subscription management and OneSignal for push notifications.',
-    color: '#f59e0b',
-  },
-  {
-    id: 4,
-    name: 'Anime',
-    country: 'China',
-    domain: 'Video Streaming',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native', 'Firebase', 'Redux'],
-    description:
-      'Anime-watching application with user subscriptions, content downloads, and language customisation options.',
+    name: 'Media & Entertainment',
+    count: 4,
     color: '#ef4444',
+    description: 'Video streaming, music, and content apps with subscriptions.',
   },
   {
-    id: 5,
-    name: 'Foodies',
-    country: 'UK',
-    domain: 'Food Delivery',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native', 'Firebase', 'Redux', 'Google Maps'],
-    description:
-      'Food delivery application with user-friendly ordering features, real-time tracking via Google Maps, and Firebase integration.',
-    color: '#10b981',
-  },
-  {
-    id: 6,
-    name: '2Link',
-    country: '—',
-    domain: 'Dating / Social',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native'],
-    description:
-      'Dating application connecting users based on interests and preferences. Features profile creation, smart matching, and in-app messaging for meaningful connections.',
-    color: '#ec4899',
-  },
-  {
-    id: 7,
-    name: 'Bluebird',
-    country: '—',
-    domain: 'Social Media',
-    role: 'Lead App Developer',
-    roleType: 'lead',
-    tech: ['React Native', 'AI Content Moderation'],
-    description:
-      'Twitter-like social media platform with advanced AI-powered content moderation that automatically detects and blocks sexual content, hate speech, and policy-violating posts.',
-    color: '#3b82f6',
-  },
-  {
-    id: 8,
-    name: 'Good Talk',
-    country: 'Africa',
-    domain: 'Media / Motivation',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase', 'Redux', 'RevenueCat'],
-    description:
-      'Motivational video application with features like liking, sharing, commenting, and Instagram reel sharing. Integrated RevenueCat for subscriptions.',
-    color: '#8b5cf6',
-  },
-  {
-    id: 9,
-    name: 'Healthcare App',
-    country: 'USA',
-    domain: 'Medical',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase'],
-    description:
-      'Health monitoring application for checking family health, storing medical data, tablet schedules, and full-body scanning.',
-    color: '#06b6d4',
-  },
-  {
-    id: 10,
-    name: 'Mingora',
-    country: 'In House',
-    domain: 'Hotel Management',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase', 'Redux', 'Stripe'],
-    description:
-      'Hotel booking application for tables, rooms, and food orders. Features online payments, order tracking on Google Maps, chat functionality, and Stripe integration.',
+    name: 'Hospitality & Food',
+    count: 3,
     color: '#f59e0b',
+    description: 'Hotel management and food delivery with real-time tracking.',
   },
   {
-    id: 11,
-    name: 'Expo Transporter',
-    country: 'USA',
-    domain: 'Logistics',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native Expo'],
-    description:
-      'Ship transporter application monitoring containers, temperature, and shipment details. Operated in offline mode with in-app purchase functionality.',
-    color: '#10b981',
-  },
-  {
-    id: 12,
-    name: 'PriceMice',
-    country: 'USA',
-    domain: 'E-Commerce',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Stripe'],
-    description:
-      'Consumer buying platform empowering individuals with purchasing power, addressing the need for affordable products and services.',
-    color: '#7c3aed',
-  },
-  {
-    id: 13,
-    name: 'GBS User App',
-    country: 'India',
-    domain: 'Enterprise Communication',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase', 'Redux'],
-    description:
-      'Intranet enterprise communication app with chat rooms, messaging, audio/video sharing, role-defined channels, and Firebase push notifications.',
-    color: '#ef4444',
-  },
-  {
-    id: 14,
-    name: 'Ecompendium',
-    country: 'Australia',
-    domain: 'Hotel Management',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase', 'Redux'],
-    description:
-      'Two companion applications (Guest & Staff) for hotel management domain, covering guest services and staff operations.',
-    color: '#06b6d4',
-  },
-  {
-    id: 15,
-    name: 'Book My Temple',
-    country: 'India',
-    domain: 'Booking',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase', 'Redux'],
-    description:
-      'Booking application focused on temples, functions, and prayer sheets with online reservation features.',
-    color: '#f59e0b',
-  },
-  {
-    id: 16,
-    name: 'Woocommers Shopping',
-    country: 'Dubai',
-    domain: 'E-Commerce',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Firebase', 'Redux', 'In-App Purchases'],
-    description:
-      'Online homemade shopping application with buy, favourites, search, and filter functionality. Integrated in-app purchases.',
-    color: '#ec4899',
-  },
-  {
-    id: 17,
-    name: 'Swadha',
-    country: 'India',
-    domain: 'Finance',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Redux', 'Push Notifications', 'In-App Purchases'],
-    description:
-      'Finance loan application enabling users to apply for loans, access customer support, calculate EMI, and manage loan-related functionalities.',
-    color: '#10b981',
-  },
-  {
-    id: 18,
-    name: 'EPIC',
-    country: 'South Africa',
-    domain: 'E-Commerce / Beverage',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Redux', 'Push Notifications', 'In-App Purchases'],
-    description:
-      'Beverage shopping application for buying drinks with item selection, favourites, and online/in-store purchase options via sockets.',
+    name: 'Social & Communication',
+    count: 3,
     color: '#3b82f6',
+    description: 'Social, dating, and enterprise communication platforms.',
   },
   {
-    id: 19,
-    name: 'Shesha',
-    country: 'South Africa',
-    domain: 'HR / Enterprise',
-    role: 'Developer',
-    roleType: 'developer',
-    tech: ['React Native', 'Redux', 'Push Notifications'],
-    description:
-      'HR development application for employees and employers covering login, document uploads, leave applications, and salary details.',
+    name: 'Enterprise & B2B',
+    count: 2,
+    color: '#06b6d4',
+    description: 'Call management analytics and HR enterprise tooling.',
+  },
+  {
+    name: 'Healthcare',
+    count: 1,
+    color: '#10b981',
+    description: 'Health monitoring and medical data management.',
+  },
+  {
+    name: 'FinTech',
+    count: 1,
     color: '#8b5cf6',
+    description: 'Loan applications and finance calculation tools.',
+  },
+  {
+    name: 'Logistics',
+    count: 1,
+    color: '#ec4899',
+    description: 'Shipment tracking and offline-capable transport apps.',
+  },
+  {
+    name: 'Booking & Reservations',
+    count: 1,
+    color: '#f97316',
+    description: 'Online reservation platforms for services and events.',
   },
 ]
+
+export const projectMeta = {
+  total: 19,
+  leadRole: 7,
+  developerRole: 12,
+  countries: ['India', 'UK', 'USA', 'Australia', 'Africa', 'Dubai', 'China', 'South Africa'],
+}
 
 export const achievements = [
   {

@@ -51,7 +51,7 @@ const contactItems = [
   {
     icon: FiGlobe,
     label: 'Remote Work',
-    value: 'Open to Remote & Relocation',
+    value: 'Open to Remote',
     href: null,
     color: '#10b981',
   },
