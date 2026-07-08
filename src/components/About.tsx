@@ -14,7 +14,7 @@ const infoCards = [
   { icon: FiMapPin, label: 'Location', value: personalInfo.location, color: '#7c3aed' },
   { icon: FiBook, label: 'Education', value: personalInfo.education.degree, color: '#06b6d4' },
   { icon: FiGlobe, label: 'Languages', value: personalInfo.languages.join(', '), color: '#f59e0b' },
-  { icon: FiUser, label: 'Available For', value: 'Full-time & Remote', color: '#10b981' },
+  { icon: FiUser, label: 'Available For', value: 'New projects & retainers', color: '#10b981' },
 ]
 
 const fadeUp = {
@@ -43,9 +43,11 @@ export default function About() {
           animate={inView ? 'visible' : 'hidden'}
           className="mb-16 text-center"
         >
+          <span className="section-eyebrow">
+            <span className="dot" /> About
+          </span>
           <h2 className="section-title" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Who Am{' '}
-            <span className="gradient-text">I?</span>
+            Your mobile product, <span className="gradient-text">owned end to end</span>
           </h2>
         </motion.div>
 
@@ -60,10 +62,10 @@ export default function About() {
               className="text-base leading-relaxed mb-5"
               style={{ color: '#94a3b8' }}
             >
-              I'm a <span style={{ color: '#a78bfa', fontWeight: 600 }}>Senior React Native Developer</span> and{' '}
-              <span style={{ color: '#67e8f9', fontWeight: 600 }}>Mobile Team Lead</span> based in Ahmedabad, India,
-              with over 5 years of hands-on experience crafting high-performance, cross-platform mobile applications
-              for Android and iOS.
+              I'm an <span style={{ color: '#a78bfa', fontWeight: 600 }}>AI Product Engineer</span> and{' '}
+              <span style={{ color: '#67e8f9', fontWeight: 600 }}>Senior Mobile Architect</span> based in Ahmedabad, India,
+              working remote-first with founders and product teams worldwide. For 5+ years I've turned ideas into
+              high-performance, cross-platform mobile products — 19+ shipped to the App Store and Google Play.
             </motion.p>
 
             <motion.p
@@ -74,10 +76,10 @@ export default function About() {
               className="text-base leading-relaxed mb-5"
               style={{ color: '#94a3b8' }}
             >
-              At <span style={{ color: '#a78bfa', fontWeight: 600 }}>Webs Optimization Pvt. Ltd.</span>, I lead the
-              entire mobile development lifecycle — from product discovery and technical architecture to CI/CD pipelines,
-              release management, and post-production monitoring. I own the Firebase stack, manage Google Play Console,
-              and maintain daily code quality standards across the team.
+              As a <span style={{ color: '#a78bfa', fontWeight: 600 }}>Mobile Team Lead</span>, I own the entire
+              product lifecycle — from discovery and architecture to CI/CD, release management, and post-production
+              monitoring. On a live B2B app I drove a <span style={{ color: '#34d399', fontWeight: 600 }}>70% crash
+              reduction</span> and shipped with zero rollback releases while leading a team of 14 engineers.
             </motion.p>
 
             <motion.p
@@ -88,10 +90,9 @@ export default function About() {
               className="text-base leading-relaxed mb-10"
               style={{ color: '#94a3b8' }}
             >
-              I'm a strong advocate for leveraging{' '}
-              <span style={{ color: '#f59e0b', fontWeight: 600 }}>AI tools</span> — including Claude, GitHub
-              Copilot, ChatGPT, Gemini, and DeepSeek — to accelerate development, improve code quality, and
-              deliver smarter, more scalable solutions.
+              I build with an <span style={{ color: '#f59e0b', fontWeight: 600 }}>AI-first workflow</span> —
+              Claude, GitHub Copilot, and custom AI tooling wired into the pipeline — to ship faster, catch bugs
+              earlier, and deliver smarter, more scalable products. I don't sell code; I help companies build products.
             </motion.p>
 
             {/* Info cards grid */}

@@ -8,7 +8,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   Languages: '💻',
   'State & Data': '🗄️',
   'Backend & Cloud': '☁️',
-  'AI Tools': '🤖',
+  AI: '🤖',
   DevOps: '⚙️',
   Leadership: '👑',
 }
@@ -18,7 +18,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Languages: '#06b6d4',
   'State & Data': '#f59e0b',
   'Backend & Cloud': '#10b981',
-  'AI Tools': '#ec4899',
+  AI: '#ec4899',
   DevOps: '#3b82f6',
   Leadership: '#8b5cf6',
 }
@@ -48,10 +48,13 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="mb-14 text-center"
         >
+          <span className="section-eyebrow">
+            <span className="dot" /> The toolkit
+          </span>
           <h2 className="section-title" style={{ fontFamily: 'Sora, sans-serif' }}>
-            My <span className="gradient-text">Expertise</span>
+            The stack behind the <span className="gradient-text">product</span>
           </h2>
-          <p className="section-subtitle">Technologies and tools I use to build great products</p>
+          <p className="section-subtitle">The technologies I reach for to design, build, and scale mobile products</p>
         </motion.div>
 
         {/* Tech marquee */}

@@ -1,33 +1,30 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail, FiArrowDown, FiPhone, FiDownload } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiArrowDown, FiArrowRight, FiCalendar } from 'react-icons/fi'
 import ParticleBackground from './ParticleBackground'
 import { useTypewriter } from '../hooks/useTypewriter'
-import { personalInfo, stats } from '../data'
+import { personalInfo, stats, trustSignals } from '../data'
 
 const socialLinks = [
   { icon: FiGithub, href: personalInfo.github, label: 'GitHub' },
   { icon: FiLinkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
-  { icon: FiMail, href: `mailto:${personalInfo.email}`, label: 'Email' },
-  { icon: FiPhone, href: `tel:${personalInfo.phone}`, label: 'Phone' },
 ]
 
 const floatingBadges = [
-  { label: 'React Native', color: '#06b6d4', delay: 0 },
-  { label: 'TypeScript', color: '#3b82f6', delay: 0.5 },
-  { label: 'Firebase', color: '#f59e0b', delay: 1.0 },
-  { label: 'Team Lead', color: '#10b981', delay: 1.5 },
-  { label: '5+ Years', color: '#ec4899', delay: 2.0 },
-  { label: 'CI/CD', color: '#22d3ee', delay: 2.5 },
+  { label: 'AI Product Engineer', color: '#8b5cf6', delay: 0 },
+  { label: 'React Native', color: '#06b6d4', delay: 0.5 },
+  { label: 'Mobile Architect', color: '#3b82f6', delay: 1.0 },
+  { label: '19+ Apps Shipped', color: '#10b981', delay: 1.5 },
+  { label: 'Team Lead', color: '#f59e0b', delay: 2.0 },
+  { label: '70% Fewer Crashes', color: '#ec4899', delay: 2.5 },
 ]
 
 export default function Hero() {
   const typedText = useTypewriter(personalInfo.roles, 75, 2000)
   const [photoError, setPhotoError] = useState(false)
 
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const scrollTo = (id: string) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
     <section
@@ -41,114 +38,134 @@ export default function Hero() {
       <div className="orb orb-cyan" style={{ width: 500, height: 500, bottom: '0%', right: '-10%' }} />
       <div className="orb orb-pink" style={{ width: 400, height: 400, top: '40%', left: '30%' }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-16">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-28 pb-16">
+        <div className="flex flex-col lg:flex-row items-center gap-14">
           {/* Left: Text content */}
           <div className="flex-1 text-center lg:text-left">
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
+            {/* Availability pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg mb-2"
-              style={{ color: 'var(--text-muted)', fontFamily: 'Inter, sans-serif' }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mb-6 flex justify-center lg:justify-start"
             >
-              Hi, I'm
+              <span className="status-pill">
+                <span className="live-dot" />
+                Available for select projects · Remote-first
+              </span>
+            </motion.div>
+
+            {/* Name kicker */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="text-sm font-medium mb-4 tracking-wide"
+              style={{ color: 'var(--text-muted)', fontFamily: 'Fira Code, monospace' }}
+            >
+              {personalInfo.name} — {personalInfo.location}
             </motion.p>
 
+            {/* Outcome headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="font-bold leading-none mb-4"
-              style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontFamily: 'Sora, sans-serif' }}
+              className="font-bold mb-6"
+              style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', lineHeight: 1.05, fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}
             >
-              <span className="shimmer-text">Jaydev</span>
+              <span style={{ color: 'var(--text-primary)' }}>Building </span>
+              <span className="shimmer-text">AI-powered mobile products</span>
               <br />
-              <span style={{ color: 'var(--text-primary)' }}>Hapani</span>
+              <span style={{ color: 'var(--text-primary)' }}>that ship fast and </span>
+              <span className="gradient-text">scale.</span>
             </motion.h1>
 
+            {/* Rotating positioning subheadline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex items-center gap-2 mb-8 justify-center lg:justify-start"
-              style={{ minHeight: 36 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="flex items-center gap-2 mb-6 justify-center lg:justify-start"
+              style={{ minHeight: 32 }}
             >
-              <span
-                className="text-xl font-semibold"
-                style={{ color: 'var(--secondary-light)', fontFamily: 'Inter, sans-serif' }}
-              >
+              <span className="text-lg md:text-xl font-semibold" style={{ color: '#67e8f9', fontFamily: 'Sora, sans-serif' }}>
                 {typedText}
               </span>
-              <span
-                className="w-0.5 h-6 animate-blink"
-                style={{ background: 'var(--secondary-light)' }}
-              />
+              <span className="w-0.5 h-6 animate-blink" style={{ background: '#67e8f9' }} />
             </motion.div>
 
+            {/* Value paragraph */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-base leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0"
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="text-base md:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
               style={{ color: 'var(--text-muted)' }}
             >
-              {personalInfo.summary}
+              {personalInfo.tagline} From architecture and AI-assisted development to release
+              and crash monitoring — I own the outcome, not just the code.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10"
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
             >
               <motion.button
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollTo('contact')}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="btn-primary"
               >
-                <span>View Projects</span>
+                <FiCalendar size={16} />
+                <span>Book a Discovery Call</span>
               </motion.button>
               <motion.button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollTo('case-studies')}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="btn-secondary"
               >
-                Contact Me
+                <span>View Case Studies</span>
+                <FiArrowRight size={16} />
               </motion.button>
-              {personalInfo.resumeUrl && (
-                <motion.a
-                  href={personalInfo.resumeUrl}
-                  download="Jaydev_Hapani_Resume.pdf"
-                  whileHover={{ scale: 1.04, y: -2 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="btn-secondary inline-flex gap-2 items-center"
-                >
-                  <FiDownload size={16} />
-                  <span>Download Resume</span>
-                </motion.a>
-              )}
+            </motion.div>
+
+            {/* Trust signals */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.75 }}
+              className="flex flex-wrap items-center gap-x-5 gap-y-2 justify-center lg:justify-start mb-6"
+            >
+              {trustSignals.map((signal) => (
+                <span key={signal} className="flex items-center gap-2 text-xs" style={{ color: 'var(--text-muted)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#22d3ee' }} />
+                  {signal}
+                </span>
+              ))}
             </motion.div>
 
             {/* Social links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.85 }}
               className="flex items-center gap-3 justify-center lg:justify-start"
             >
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
                   href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  whileHover={{ scale: 1.15, y: -3 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.12, y: -3 }}
                   whileTap={{ scale: 0.9 }}
                   title={label}
+                  aria-label={label}
                   className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200"
                   style={{
                     background: 'rgba(6, 182, 212, 0.08)',
@@ -158,20 +175,18 @@ export default function Hero() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = 'rgba(6, 182, 212, 0.5)'
                     e.currentTarget.style.color = '#22d3ee'
-                    e.currentTarget.style.background = 'rgba(6, 182, 212, 0.12)'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = 'rgba(6, 182, 212, 0.18)'
                     e.currentTarget.style.color = 'var(--text-muted)'
-                    e.currentTarget.style.background = 'rgba(6, 182, 212, 0.08)'
                   }}
                 >
                   <Icon size={18} />
                 </motion.a>
               ))}
               <div className="h-6 w-px mx-1" style={{ background: 'var(--border)' }} />
-              <span className="text-sm" style={{ color: 'var(--secondary-light)' }}>
-                {personalInfo.location}
+              <span className="text-xs" style={{ color: 'var(--text-muted)', fontFamily: 'Fira Code, monospace' }}>
+                {personalInfo.timezone}
               </span>
             </motion.div>
           </div>
@@ -195,38 +210,24 @@ export default function Hero() {
             </div>
 
             {/* Profile photo / initials fallback */}
-            <div
-              className="absolute inset-3 rounded-full overflow-hidden"
-              style={{ border: '1px solid rgba(6, 182, 212, 0.25)' }}
-            >
+            <div className="absolute inset-3 rounded-full overflow-hidden" style={{ border: '1px solid rgba(6, 182, 212, 0.25)' }}>
               {!photoError ? (
                 <img
                   src="/profile.jpg"
-                  alt="Jaydev Hapani"
+                  alt="Jaydev Hapani — AI Product Engineer and Senior Mobile Architect"
                   className="w-full h-full object-cover object-center"
                   onError={() => setPhotoError(true)}
                 />
               ) : (
                 <div
                   className="w-full h-full flex flex-col items-center justify-center animate-pulse-glow"
-                  style={{
-                    background: 'radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
-                  }}
+                  style={{ background: 'radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)' }}
                 >
                   <div
                     className="w-24 h-24 rounded-2xl flex items-center justify-center mb-3"
-                    style={{
-                      background: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
-                      boxShadow: '0 0 40px rgba(6, 182, 212, 0.4)',
-                      fontFamily: 'Sora, sans-serif',
-                    }}
+                    style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)', boxShadow: '0 0 40px rgba(6, 182, 212, 0.4)', fontFamily: 'Sora, sans-serif' }}
                   >
                     <span className="text-4xl font-bold text-white">JH</span>
-                  </div>
-                  <div className="text-center px-4" style={{ fontFamily: 'Fira Code, monospace' }}>
-                    <p className="text-xs" style={{ color: 'var(--secondary-light)' }}>
-                      {'<'}<span style={{ color: '#22d3ee' }}>developer</span>{' />'}
-                    </p>
                   </div>
                 </div>
               )}
@@ -283,10 +284,7 @@ export default function Hero() {
               whileHover={{ y: -4, scale: 1.02 }}
               className="glass-card p-5 text-center"
             >
-              <div
-                className="text-3xl font-bold mb-1 gradient-text"
-                style={{ fontFamily: 'Sora, sans-serif' }}
-              >
+              <div className="text-3xl font-bold mb-1 gradient-text" style={{ fontFamily: 'Sora, sans-serif' }}>
                 {stat.value}{stat.suffix}
               </div>
               <div className="text-sm" style={{ color: 'var(--text-muted)' }}>
@@ -299,10 +297,11 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.button
-        onClick={scrollToAbout}
+        onClick={() => scrollTo('impact')}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
+        aria-label="Scroll to impact"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group"
       >
         <span className="text-xs" style={{ color: 'var(--secondary-dark)', fontFamily: 'Fira Code, monospace' }}>

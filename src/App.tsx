@@ -1,12 +1,14 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Metrics from './components/Metrics'
 import About from './components/About'
-import Skills from './components/Skills'
-import Experience from './components/Experience'
-import HowILead from './components/HowILead'
+import WhyHireMe from './components/WhyHireMe'
+import AIProcess from './components/AIProcess'
 import CaseStudies from './components/CaseStudies'
 import Projects from './components/Projects'
-import Achievements from './components/Achievements'
+import Experience from './components/Experience'
+import HowILead from './components/HowILead'
+import Skills from './components/Skills'
 import Testimonials from './components/Testimonials'
 import ContactPage from './components/ContactPage'
 import Footer from './components/Footer'
@@ -19,13 +21,15 @@ function App() {
         <Navbar />
         <main>
           <Hero />
+          <Metrics />
           <About />
-          <Skills />
-          <Experience />
-          <HowILead />
+          <WhyHireMe />
+          <AIProcess />
           <CaseStudies />
           <Projects />
-          <Achievements />
+          <Experience />
+          <HowILead />
+          <Skills />
           <Testimonials />
           <ContactPage />
         </main>

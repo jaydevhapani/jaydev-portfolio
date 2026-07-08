@@ -9,6 +9,7 @@ import {
   FiGlobe,
   FiSend,
   FiCheckCircle,
+  FiCalendar,
 } from 'react-icons/fi'
 import { personalInfo } from '../data'
 
@@ -122,13 +123,27 @@ export default function ContactPage() {
           transition={{ duration: 0.5 }}
           className="mb-14 text-center"
         >
+          <span className="section-eyebrow">
+            <span className="dot" /> Let's talk
+          </span>
           <h2 className="section-title" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Let's <span className="gradient-text">Connect</span>
+            Let's build something <span className="gradient-text">amazing</span>
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Have a project idea, question, or just want to say hi? Reach out and I'll get back to
-            you as soon as possible.
+            Have an idea, a product to scale, or a team to level up? Book a free
+            discovery call and let's figure out how to ship it.
           </p>
+          <motion.a
+            href={personalInfo.calendly}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            className="btn-primary"
+          >
+            <FiCalendar size={16} />
+            <span>Book a Discovery Call</span>
+          </motion.a>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10">

@@ -1,19 +1,29 @@
 export const personalInfo = {
   name: 'Jaydev Hapani',
+  // Positioning-first titles. These rotate in the hero to frame the brand,
+  // not the job description.
   roles: [
-    'Senior React Native Developer',
+    'AI Product Engineer',
+    'Senior Mobile Architect',
+    'React Native Expert',
+    'Startup Technology Partner',
     'Mobile Team Lead',
-    'Cross-Platform Expert',
-    'AI-Powered Developer',
   ],
+  // The one-line elevator pitch used across meta + hero.
+  tagline: 'I help startups turn ideas into AI-powered mobile products that ship fast and scale.',
   email: 'hapanijaydev04@gmail.com',
   phone: '+91 81282 46008',
-  location: 'Ahmedabad, India',
+  location: 'India',
+  timezone: 'IST (UTC+5:30) · overlaps EU & US mornings',
   linkedin: 'https://linkedin.com/in/hapani-jaydev-33a34b20a',
   github: 'https://github.com/jaydevhapani',
+  calendly: 'https://cal.com/jaydevhapani',
   resumeUrl: '/resume.pdf',
+  // Founder-facing summary — outcomes, not a duty list.
   summary:
-    'Results-driven React Native Developer and Mobile Team Lead with 5+ years of experience building, scaling, and leading cross-platform mobile applications for Android and iOS. Expert in React Native architecture, performance optimisation, CI/CD, and end-to-end app lifecycle management. Proficient in leveraging AI tools to accelerate development, improve code quality, and deliver smarter solutions.',
+    'I partner with founders and product teams to build cross-platform mobile products end to end — from architecture and AI-assisted development to release, crash monitoring, and scale. 5+ years, 19+ production apps, teams of engineers led. I do not just write React Native; I own the outcome.',
+  shortSummary:
+    'Mobile architect and AI product engineer. I take mobile products from zero to production-grade — and keep them stable at scale.',
   languages: ['English', 'Hindi', 'Gujarati'],
   education: {
     degree: 'Bachelor of Science (B.Sc.) – Computer Science',
@@ -22,11 +32,87 @@ export const personalInfo = {
   },
 }
 
+// Headline impact metrics — real numbers, framed as outcomes clients care about.
+export interface Metric {
+  value: number
+  suffix: string
+  label: string
+  description: string
+  color: string
+}
+
+export const metrics: Metric[] = [
+  {
+    value: 19,
+    suffix: '+',
+    label: 'Production Apps',
+    description: 'Shipped to the App Store & Google Play',
+    color: '#22d3ee',
+  },
+  {
+    value: 5,
+    suffix: '+',
+    label: 'Years Building Mobile',
+    description: 'React Native, Android & iOS in production',
+    color: '#3b82f6',
+  },
+  {
+    value: 10,
+    suffix: '+',
+    label: 'Countries Served',
+    description: 'Products used across 3 continents',
+    color: '#8b5cf6',
+  },
+  {
+    value: 14,
+    suffix: '',
+    label: 'Engineers Led',
+    description: 'Hired, mentored & shipped alongside',
+    color: '#06b6d4',
+  },
+  {
+    value: 70,
+    suffix: '%',
+    label: 'Crash Reduction',
+    description: 'On a live B2B app, release over release',
+    color: '#10b981',
+  },
+  {
+    value: 50,
+    suffix: '%',
+    label: 'ANR Reduction',
+    description: 'Fewer app-not-responding events at scale',
+    color: '#f59e0b',
+  },
+  {
+    value: 100,
+    suffix: 'K+',
+    label: 'Users Impacted',
+    description: 'Across shipped consumer & B2B apps',
+    color: '#ec4899',
+  },
+  {
+    value: 0,
+    suffix: '',
+    label: 'Rollback Releases',
+    description: 'Zero emergency rollbacks as team lead',
+    color: '#a78bfa',
+  },
+]
+
+// Compact stat set used in the hero + about (subset of metrics).
 export const stats = [
+  { label: 'Production Apps', value: 19, suffix: '+' },
   { label: 'Years Experience', value: 5, suffix: '+' },
-  { label: 'Projects Delivered', value: 19, suffix: '+' },
-  { label: 'Companies', value: 4, suffix: '' },
-  { label: 'Awards Won', value: 3, suffix: '' },
+  { label: 'Engineers Led', value: 14, suffix: '' },
+  { label: 'Users Impacted', value: 100, suffix: 'K+' },
+]
+
+// Trust / social-proof strip shown under the hero CTA.
+export const trustSignals = [
+  'Available for select projects',
+  'Remote-first · works across time zones',
+  'Founder-friendly, product-minded',
 ]
 
 export interface Experience {
@@ -46,20 +132,16 @@ export const experiences: Experience[] = [
     role: 'Mobile Team Lead',
     company: 'Webs Optimization Pvt. Ltd.',
     location: 'Ahmedabad',
-    period: 'Apr 2024 – May 2026',
+    period: 'Apr 2024 – Present',
     current: true,
     color: '#7c3aed',
     points: [
-      'Technical Lead for Callyzer Pro — a live B2B call management & analytics Android app used by paying business clients.',
-      'Author Functional Specification Documents (FSDs) for all features; run kickoff meetings to align QA and developers.',
-      'Conduct daily code reviews — enforce quality standards, remove redundant code, and provide written feedback.',
-      'Manage Git branching strategy: validate feature branches and merge QA-signed-off code into the development branch.',
-      'Own Firebase project (Crashlytics, Analytics, Remote Config, FCM) — monitor ANRs and crashes; drive fixes post-release.',
-      'Manage Google Play Console end-to-end: Beta and Production deployments, version documentation, release notes.',
-      'Engage with CEO on product roadmap; translate business goals into actionable delivery plans.',
-      'Conduct technical interviews, mentor junior developers, and train React Native interns.',
-      'Collaborate with sales team to triage client issues — classify as usage, config, or technical bugs within SLAs.',
-      'Architect scalable mobile solutions and maintain CI/CD pipelines to reduce release cycles.',
+      'Technical lead for Callyzer Pro — a live B2B call-management & analytics Android app used by paying business clients.',
+      'Drove a 70% crash reduction and 50% fewer ANRs by owning Firebase Crashlytics triage, Remote Config feature gates, and post-release monitoring.',
+      'Author Functional Specification Documents (FSDs) for every feature and run kickoffs that align product, QA, and engineering before a line of code is written.',
+      'Own the release pipeline end to end — Play Console beta & production rollouts, versioning, release notes, and CI/CD to shorten release cycles.',
+      'Engage directly with the CEO on product roadmap; translate business goals into shippable delivery plans.',
+      'Hired and mentored a team of engineers and interns — ran technical interviews and turned juniors into production-shipping developers.',
     ],
   },
   {
@@ -71,38 +153,178 @@ export const experiences: Experience[] = [
     current: false,
     color: '#06b6d4',
     points: [
-      'Developed and optimised high-performance React Native applications; led key modules and mentored junior developers.',
-      'Implemented advanced state management and deep REST API / Firebase integrations across multiple production releases.',
-      'Consistently improved app stability and performance — awarded Star Performance Award.',
+      'Architected and optimised high-performance React Native apps; led key modules and mentored junior developers.',
+      'Unified subscriptions across iOS & Android with RevenueCat and drove engagement with segment-based push — reducing billing bugs and restore failures.',
+      'Awarded the Star Performance Award for consistently improving app stability and performance across production releases.',
     ],
   },
   {
     id: 3,
-    role: 'Junior Mobile Developer',
+    role: 'Mobile Developer',
     company: 'ManekTech Pvt. Ltd.',
     location: 'Ahmedabad',
     period: 'Dec 2021 – Dec 2022',
     current: false,
     color: '#f59e0b',
     points: [
-      'Built and maintained React Native apps; integrated REST APIs and Firebase services.',
-      'Delivered client projects under tight deadlines — received Client Appreciation & Outstanding Performance Award.',
+      'Built and shipped React Native apps for international clients; integrated REST APIs and the full Firebase suite.',
+      'Delivered client projects under tight deadlines — received the Client Appreciation & Outstanding Performance Award.',
     ],
   },
   {
     id: 4,
-    role: 'Junior Mobile Developer',
+    role: 'Mobile Developer',
     company: 'iFlair Pvt. Ltd.',
     location: 'Ahmedabad',
     period: 'Dec 2020 – Dec 2021',
     current: false,
     color: '#10b981',
     points: [
-      'Began professional career as a React Native Developer — built strong fundamentals in mobile architecture, debugging, and deployment.',
-      'Contributed to Android & iOS application releases from development through to store submission.',
+      'Started my mobile career building strong fundamentals in cross-platform architecture, debugging, and store deployment.',
+      'Contributed to Android & iOS releases from development through to store submission.',
     ],
   },
 ]
+
+// "Why clients hire me" — outcomes, not a skills checklist.
+export interface HireReason {
+  title: string
+  description: string
+  icon: 'product' | 'ownership' | 'architecture' | 'ai' | 'scale' | 'comms' | 'ship'
+  color: string
+}
+
+export const hireReasons: HireReason[] = [
+  {
+    title: 'Product Thinking',
+    description:
+      'I start from the user and the business goal, not the ticket. I push back on the wrong feature and propose the right one — so you build what actually moves the metric.',
+    icon: 'product',
+    color: '#22d3ee',
+  },
+  {
+    title: 'Full Ownership',
+    description:
+      'From architecture to App Store review to post-launch crash triage — I own the outcome, not just my slice. You get a partner, not a pair of hands.',
+    icon: 'ownership',
+    color: '#3b82f6',
+  },
+  {
+    title: 'AI-First Workflow',
+    description:
+      'I build with Claude, Copilot, and custom AI tooling wired into the pipeline — shipping faster and catching bugs before they reach your users.',
+    icon: 'ai',
+    color: '#8b5cf6',
+  },
+  {
+    title: 'Architecture That Scales',
+    description:
+      'Clean, modular React Native architecture with the right state, data, and offline strategy — so the app is still maintainable at v10, not just v1.',
+    icon: 'architecture',
+    color: '#06b6d4',
+  },
+  {
+    title: 'Production-Grade Stability',
+    description:
+      'I obsess over crashes, ANRs, and performance in the real world. 70% crash reduction on a live app is not an accident — it is a process.',
+    icon: 'scale',
+    color: '#10b981',
+  },
+  {
+    title: 'Clear Communication',
+    description:
+      'Written specs, honest timelines, and no jargon. Founders and non-technical stakeholders always know where the product stands.',
+    icon: 'comms',
+    color: '#f59e0b',
+  },
+]
+
+// "How I build products with AI" — the delivery process as a story.
+export interface ProcessStep {
+  phase: string
+  title: string
+  description: string
+  tools: string[]
+  color: string
+}
+
+export const processSteps: ProcessStep[] = [
+  {
+    phase: '01',
+    title: 'Research & Discovery',
+    description:
+      'Understand the user, the market, and the real problem. Competitor teardown, feature gap analysis, and a sharp definition of what to build first.',
+    tools: ['User Research', 'Competitor Analysis', 'Claude'],
+    color: '#22d3ee',
+  },
+  {
+    phase: '02',
+    title: 'Product Planning',
+    description:
+      'Scope the MVP, write the functional spec, and align product, QA, and engineering before any code — so the team ships in one direction.',
+    tools: ['FSD Authoring', 'Roadmapping', 'ChatGPT'],
+    color: '#3b82f6',
+  },
+  {
+    phase: '03',
+    title: 'Architecture & Design',
+    description:
+      'Design the app architecture, data model, and offline strategy, then map it against Figma flows so engineering and design never drift.',
+    tools: ['System Design', 'Figma', 'TypeScript'],
+    color: '#6366f1',
+  },
+  {
+    phase: '04',
+    title: 'AI-Assisted Development',
+    description:
+      'Build in React Native with AI tooling wired into the loop — faster feature work, cleaner code, and reviews that catch issues early.',
+    tools: ['React Native', 'GitHub Copilot', 'Claude Code'],
+    color: '#8b5cf6',
+  },
+  {
+    phase: '05',
+    title: 'Testing & QA',
+    description:
+      'Automated checks, AI-generated unit tests, and a written review checklist that kills recurring bug classes before release.',
+    tools: ['Unit Tests', 'Code Review', 'CI/CD'],
+    color: '#a855f7',
+  },
+  {
+    phase: '06',
+    title: 'Release & Deployment',
+    description:
+      'Staged rollouts on Play Console & App Store, feature-gated behind Remote Config so risky changes can be killed without a new release.',
+    tools: ['Play Console', 'App Store', 'Remote Config'],
+    color: '#ec4899',
+  },
+  {
+    phase: '07',
+    title: 'Monitor & Improve',
+    description:
+      'Firebase Crashlytics, Analytics, and ANR triage in production — turning real usage into the next iteration. The product gets better after launch.',
+    tools: ['Crashlytics', 'Analytics', 'Continuous Improvement'],
+    color: '#10b981',
+  },
+]
+
+// "Currently building" — the AI engineering agent flow.
+export const currentlyBuilding = {
+  title: 'AI Engineering Copilot',
+  tagline: 'An autonomous workflow that turns production crashes into shipped fixes.',
+  description:
+    'I am building an AI-powered engineering agent that closes the loop between a Firebase crash and a merged pull request — reading stack traces, finding root causes, and drafting the fix so engineers move faster and users hit fewer bugs.',
+  steps: [
+    { label: 'Detects Firebase Crashes & ANRs', icon: 'alert' },
+    { label: 'Reads & Parses Stack Traces', icon: 'code' },
+    { label: 'Finds the Root Cause', icon: 'search' },
+    { label: 'Creates Jira Tasks', icon: 'ticket' },
+    { label: 'Suggests a Fix', icon: 'bulb' },
+    { label: 'Generates Unit Tests', icon: 'check' },
+    { label: 'Writes the PR Description', icon: 'doc' },
+    { label: 'Opens the Pull Request', icon: 'git' },
+    { label: 'Assists the Engineer', icon: 'user' },
+  ],
+}
 
 export interface Skill {
   name: string
@@ -114,9 +336,9 @@ export const skillCategories: Record<string, Skill[]> = {
     { name: 'React Native', level: 98 },
     { name: 'Android', level: 90 },
     { name: 'iOS', level: 85 },
+    { name: 'Expo', level: 82 },
     { name: 'Play Store', level: 95 },
     { name: 'App Store', level: 88 },
-    { name: 'In-App Purchases', level: 88 },
   ],
   Languages: [
     { name: 'JavaScript (ES6+)', level: 96 },
@@ -124,8 +346,6 @@ export const skillCategories: Record<string, Skill[]> = {
     { name: 'Java', level: 78 },
     { name: 'Kotlin', level: 72 },
     { name: 'Swift', level: 68 },
-    { name: 'C', level: 65 },
-    { name: 'C++', level: 62 },
   ],
   'State & Data': [
     { name: 'Redux', level: 92 },
@@ -142,12 +362,12 @@ export const skillCategories: Record<string, Skill[]> = {
     { name: 'RevenueCat', level: 82 },
     { name: 'OneSignal', level: 80 },
   ],
-  'AI Tools': [
+  AI: [
     { name: 'Claude (Anthropic)', level: 92 },
     { name: 'GitHub Copilot', level: 88 },
     { name: 'ChatGPT', level: 87 },
+    { name: 'AI Agents & Tooling', level: 82 },
     { name: 'Gemini', level: 80 },
-    { name: 'DeepSeek', level: 78 },
   ],
   DevOps: [
     { name: 'Git & GitHub', level: 92 },
@@ -291,9 +511,9 @@ export const caseStudies: CaseStudy[] = [
       'Hardened the CI/CD pipeline so every feature branch was QA-signed-off before merge into development.',
     ],
     impact: [
-      'Stable release cadence with zero rollback releases over the period.',
-      'Crash-impacted users trended down release-over-release.',
-      'Faster client SLA response — issues classified as usage vs config vs technical bug within hours, not days.',
+      '70% reduction in crashes and 50% fewer ANRs across the monitored period.',
+      'Zero rollback releases — a stable, predictable cadence enterprise clients could trust.',
+      'Faster client SLA response — issues triaged as usage vs config vs technical bug within hours, not days.',
     ],
     stack: ['React Native', 'Firebase', 'Remote Config', 'Play Console', 'CI/CD'],
     color: '#7c3aed',
@@ -307,7 +527,7 @@ export const caseStudies: CaseStudy[] = [
     approach: [
       'Integrated RevenueCat to unify subscription state across iOS and Android — single source of truth instead of per-platform stores.',
       'Wired OneSignal for segment-based push with opt-in prompts staged behind real user value (not on first launch).',
-      'Built receipt-restore flow that worked offline-first so users never lost access on app reinstall.',
+      'Built a receipt-restore flow that worked offline-first so users never lost access on app reinstall.',
       'Added Firebase Analytics events around the paywall to spot drop-off and tune copy.',
     ],
     impact: [
@@ -327,7 +547,7 @@ export const caseStudies: CaseStudy[] = [
     approach: [
       'Established a written code-review checklist: dead code, redundant conditions, missing shared hooks/utils, unnecessary re-renders, formatting, and comment hygiene.',
       'Standardised FSD authoring: tech analysis → project understanding → rough draft → final FSD aligned to Figma + client requirements.',
-      'Ran technical interviews and assessed each junior\'s learning style — self-starter vs guided — and tailored onboarding tasks to match.',
+      "Ran technical interviews and assessed each junior's learning style — self-starter vs guided — and tailored onboarding tasks to match.",
       'Made code review a teaching loop: every comment explains the why, not just the fix.',
     ],
     impact: [
@@ -439,7 +659,7 @@ export const techMarquee: TechLogo[] = [
   { name: 'Firebase', icon: 'SiFirebase', color: '#ffca28' },
   { name: 'Android', icon: 'SiAndroid', color: '#3ddc84' },
   { name: 'iOS', icon: 'SiApple', color: '#a2aaad' },
-  { name: 'Java', icon: 'SiOpenjdk', color: '#f89820' },
+  { name: 'Expo', icon: 'SiExpo', color: '#f8fafc' },
   { name: 'Kotlin', icon: 'SiKotlin', color: '#7f52ff' },
   { name: 'Swift', icon: 'SiSwift', color: '#f05138' },
   { name: 'Git', icon: 'SiGit', color: '#f05032' },
@@ -455,4 +675,3 @@ export const techMarquee: TechLogo[] = [
   { name: 'Google Gemini', icon: 'SiGooglegemini', color: '#4285f4' },
   { name: 'Tailwind CSS', icon: 'SiTailwindcss', color: '#06b6d4' },
 ]
-

@@ -5,13 +5,11 @@ import { personalInfo } from '../data'
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Leadership', href: '#how-i-lead' },
+  { label: 'Impact', href: '#impact' },
+  { label: 'Process', href: '#process' },
+  { label: 'Why Me', href: '#why-me' },
   { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Work', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -118,7 +116,7 @@ export default function Navbar() {
               className="px-5 py-2 rounded-xl text-sm font-semibold text-white"
               style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }}
             >
-              Contact Me
+              Let's Talk
             </motion.button>
           </div>
 
@@ -201,7 +199,7 @@ export default function Navbar() {
                 className="flex-1 py-3 rounded-xl text-sm font-semibold text-white"
                 style={{ background: 'linear-gradient(135deg, #06b6d4, #3b82f6)' }}
               >
-                Contact Me
+                Let's Talk
               </button>
             </div>
           </motion.div>
